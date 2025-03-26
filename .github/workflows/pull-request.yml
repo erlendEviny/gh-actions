@@ -15,11 +15,17 @@ on:
 jobs:
 
   test-job:
-  
+
     name: Test
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Test_step1
         run: npm run test
 
@@ -28,6 +34,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+            
       - name: Lint_step1
         run: npm run lint:check
 
