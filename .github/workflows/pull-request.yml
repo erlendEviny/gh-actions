@@ -14,7 +14,24 @@ on:
 # These will be run in parallel.
 jobs:
 
-  build:
+  test-job:
+  
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test_step1
+        run: npm run test
+
+  lint-job:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lint_step1
+        run: npm run lint:check
+
+  build-job:
 
     name: Build ️ 
 
